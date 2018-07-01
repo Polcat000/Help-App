@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .main.container
+        .row.col-md-6.col-md-offset-3
+            h1.display-4.m-b-2 It's great to see a new face!
+            form(method='POST' action='/register')
+                div.form-group
+                label(for='name') Name:
+                input#name.form-control(type='text', placeholder='first and last' name='name')
+                div.form-group
+                label(for='email') Email:
+                input#email.form-control(type='email', placeholder='name@email.com' name='email')
+                div.form-group
+                label(for='emergencyContact') Emergency Contact:
+                input#emergencyContact.form-control(type='text', placeholder='first and last' name='emergencyContact')
+                div.form-group
+                label(for='emergencyPhone') Emergency Phone Number:
+                input#emergencyPhone.form-control(type='text', placeholder='555-555-5555' name='emergencyPhone')
+                div.form-group
+                label(for='allergies') Allergies:
+                input#allergies.form-control(type='text', placeholder='Cats, Pollen, Taxes...' name='allergies')
+                div.form-group
+                label(for='pw') Password:
+                input#pw.form-control(type='password' name='password')
+                div.form-group
+                label(for='pw2') Confirm Password:
+                input#pw2.form-control(type='password' name='confirmPassword')
+                button#signup-btn.btn.btn-info-outline.btn-lg.form-control(type='submit') Sign up
