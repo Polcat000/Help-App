@@ -16,13 +16,5 @@ function requiresLogin (req, res, next){
     
 }
 
-// function publicProfileDisplay (req, res, next){
-//     if(name == req.body.name){
-//         next();
-//     }
-    
-// }
-
 module.exports.loggedOut = loggedOut;
 module.exports.requiresLogin = requiresLogin;
-// module.exports.publicProfileDisplay = publicProfileDisplay;
