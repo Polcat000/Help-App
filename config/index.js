@@ -9,5 +9,5 @@ module.exports = {
     host:     process.env.DB_HOST,
     dbName:   process.env.DB_NAME,
   },
-  secret: 'pizza',
+  secret: process.env.SECRET,
 };

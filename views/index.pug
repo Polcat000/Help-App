@@ -4,11 +4,7 @@ block content
   .main.container.text-xs-center
     h1.display-3 Welcome to Help!
     p.lead Who needs help today?
-    form#welcome-form.form-group(action='/profilePublic', method='get')
-      input#welcome-input.input-group.form-control(type='text', value='', placeholder='Please enter a name.')
-    button.btn.btn-info(type='submit') Submit
-    
-    
-    
-    //- a.btn.btn-info-outline.btn-lg(href='/register') Get Started for FREE  
+    form#welcome-form.form-group(action='/', method='post')
+      input#welcome-input.input-group.form-control(type='text', value='', name='name' placeholder='Please enter a name.')
+      button#welcome-btn.btn.btn-info(type='submit') Submit 
 
