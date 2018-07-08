@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var config = require('./config');
 var mongoose = require('mongoose');
+var logger = require('morgan');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var routes = require('./routes/index');
@@ -48,6 +49,7 @@ app.use(express.static(__dirname + '/public'));
 // view engine setup
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
+app.use(logger('dev'));
 
 // include routes
 app.use('/', routes);
@@ -68,10 +70,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-//Listen on configured port
-app.listen(config.port, function() {
-    console.log(`${config.appName} is listening on port ${config.port}`);
-  });
-
-
-  module.exports = db.openUri;
+  module.exports = app;

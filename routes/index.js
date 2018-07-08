@@ -18,15 +18,15 @@ router.post('/', function(req, res, next) {
   var username = {
     'name': req.body.name
   }
-
-
-  User.findOne(username, function(error, user){if(error){
-      return next(error);
-    } else {
-      return res.render('publicProfile', {title: 'Profile', name: user.name, emergencyContact: user.emergencyContact, emergencyPhone: user.emergencyPhone, allergies: user.allergies});
-    }
-  }); 
-  
+    User.findOne(username, function(error, user){
+      if(error || !user){
+        var err = new Error('User not found.');
+        err.status = 401;
+        return next(err);
+      } else {
+        return res.render('publicProfile', {title: 'Profile', name: user.name, emergencyContact: user.emergencyContact, emergencyPhone: user.emergencyPhone, allergies: user.allergies});
+      }
+    }); 
 });
 
 // GET /about

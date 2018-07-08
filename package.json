@@ -6,7 +6,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "nodemon ./app"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^2.0.1",
@@ -17,6 +18,7 @@
     "express-session": "^1.15.6",
     "mit-license": "^1.0.0",
     "mongoose": "^5.1.5",
+    "morgan": "^1.9.0",
     "pug": "^2.0.0-beta2"
   },
   "license": "MIT"
