@@ -91,6 +91,10 @@ a:hover {
 .btn {
 	transition: .4s;
 }
+.btn-edit{
+	margin-left: 2em;
+	padding: 0.2em 0.5em;
+}
 #signup-btn{
 	margin-top: 2em;
 }

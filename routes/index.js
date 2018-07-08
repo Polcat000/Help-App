@@ -145,8 +145,4 @@ router.get('/profile', mid.requiresLogin, function(req, res, next){
 });
 
 
-
-
-
-
 module.exports = router;
