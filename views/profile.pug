@@ -7,15 +7,17 @@ block content
         h1.display-4
           img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
           | #{name}
-        h2.profile-item Emergency Contact
-        |  #{emergencyContact}
-        span.pull-right
-              button.btn.btn-xs.btn-info-outline.btn-edit(type='submit') Edit
-        h2.profile-item Emergency Phone Number
-        | #{emergencyPhone}
-        span.pull-right
-            button.btn.btn-xs.btn-info-outline.btn-edit(type='button') Edit
-        h2.profile-item Allergies
-        | #{allergies}
-        span.pull-right
-            button.btn.btn-xs.btn-info-outline.btn-edit(type='button') Edit
+        form(method='POST' action='/profile')
+          div.form-group
+                label(for='emergencyContact') Emergency Contact:
+                |    #{emergencyContact}
+                input#emergencyContact.form-control(type='text', placeholder='First and last', name='emergencyContact')
+                div.form-group
+                label(for='emergencyPhone') Emergency Phone Number:
+                |    #{emergencyPhone}
+                input#emergencyPhone.form-control(type='text', placeholder='555-555-5555' name='emergencyPhone')
+                div.form-group
+                label(for='allergies') Allergies:
+                |    #{allergies}
+                input#allergies.form-control(type='text', placeholder='Cats, Pollen, Taxes...' name='allergies')              
+                button#signup-btn.btn.btn-info-outline.btn-lg.form-control(type='submit', data-toggle='tooltip', data-placement='top', title='Please fill out all fields when updating.') Update

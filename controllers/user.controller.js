@@ -80,6 +80,7 @@ exports.user_logout = function(req, res, next){
 exports.user_profile = function(req, res, next) {
   User.findById(req.session.userId)
     .exec(function(error, user){
+      
       if(error){
         return next(error);
       } else {
@@ -101,12 +102,14 @@ exports.user_public_view = function(req, res, next) {
     }); 
 };
 
-// exports.user_update = function(req,res) {
-//   Usert.findByIdAndUpdate(req.session.userId, {$set: req.body}, 
-//     function (err, user) {
-//             if (err) return next(err);
-//             res.send('User updated!');
-//         });
-// };
 
+exports.user_update = function(req, res, next) {
 
+  User.findByIdAndUpdate(req.session.userId, req.body, { new: true },
+     
+    function (err, user) {
+      if (err) return next(err);
+      res.render('profile', {title: 'Profile', name: user.name, emergencyContact: user.emergencyContact, emergencyPhone: user.emergencyPhone, allergies: user.allergies});
+  });
+
+};

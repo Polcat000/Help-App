@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var logger = require('morgan');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var methodOverride = require('method-override');
 var routes = require('./routes/index');
 var app = express();
 
@@ -50,6 +51,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 
 // include routes
 app.use('/', routes);

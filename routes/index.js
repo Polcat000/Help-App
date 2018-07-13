@@ -33,7 +33,7 @@ router.get('/login', mid.loggedOut, function(req, res, next){
 });
 
 //POST /login
-router.post('/login',user_controller.user_login);
+router.post('/login', mid.loggedOut, user_controller.user_login);
 
 
 //GET /logout
@@ -44,14 +44,15 @@ router.get('/logout', user_controller.user_logout);
 router.get('/profile', mid.requiresLogin, user_controller.user_profile);
 
 //PUT /profile
-// router.put('/profile', mid.requiresLogin, user_controller.user_update);
+router.post('/profile', mid.requiresLogin, user_controller.user_update);
 
+//DELETE /profile
+// router.delete('/profile', mid.requiresLogin, user_controller.user_delete);
 
 // GET /about
 router.get('/about', function(req, res, next) {
   return res.render('about', { title: 'About' });
 });
-
 
 // GET /contact
 router.get('/contact', function(req, res, next) {
