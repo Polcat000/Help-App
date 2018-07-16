@@ -110,6 +110,20 @@ exports.user_update = function(req, res, next) {
     function (err, user) {
       if (err) return next(err);
       res.render('profile', {title: 'Profile', name: user.name, emergencyContact: user.emergencyContact, emergencyPhone: user.emergencyPhone, allergies: user.allergies});
+    });
+
+};
+
+exports.user_delete = function(req, res, next) {
+  User.findByIdAndRemove(req.session.userId, function (err, user) {
+      //delete session object
+      req.session.destroy(function(err){
+      if(err) {
+        return next(err);
+      } else {
+        return res.redirect('/');
+      }
+    })
   });
 
 };

@@ -46,8 +46,8 @@ router.get('/profile', mid.requiresLogin, user_controller.user_profile);
 //PUT /profile
 router.post('/profile', mid.requiresLogin, user_controller.user_update);
 
-//DELETE /profile
-// router.delete('/profile', mid.requiresLogin, user_controller.user_delete);
+//DELETE /delete
+router.post('/delete', mid.requiresLogin, user_controller.user_delete);
 
 // GET /about
 router.get('/about', function(req, res, next) {

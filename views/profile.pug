@@ -9,15 +9,19 @@ block content
           | #{name}
         form(method='POST' action='/profile')
           div.form-group
-                label(for='emergencyContact') Emergency Contact:
-                |    #{emergencyContact}
-                input#emergencyContact.form-control(type='text', placeholder='First and last', name='emergencyContact')
-                div.form-group
-                label(for='emergencyPhone') Emergency Phone Number:
-                |    #{emergencyPhone}
-                input#emergencyPhone.form-control(type='text', placeholder='555-555-5555' name='emergencyPhone')
-                div.form-group
-                label(for='allergies') Allergies:
-                |    #{allergies}
-                input#allergies.form-control(type='text', placeholder='Cats, Pollen, Taxes...' name='allergies')              
-                button#signup-btn.btn.btn-info-outline.btn-lg.form-control(type='submit', data-toggle='tooltip', data-placement='top', title='Please fill out all fields when updating.') Update
+            label(for='emergencyContact') Emergency Contact:
+            |    #{emergencyContact}
+            input#emergencyContact.form-control(type='text', placeholder='First and last', name='emergencyContact')
+            div.form-group
+            label(for='emergencyPhone') Emergency Phone Number:
+            |    #{emergencyPhone}
+            input#emergencyPhone.form-control(type='text', placeholder='555-555-5555' name='emergencyPhone')
+            div.form-group
+            label(for='allergies') Allergies:
+            |    #{allergies}
+            input#allergies.form-control(type='text', placeholder='Cats, Pollen, Taxes...' name='allergies')              
+            button#signup-btn.btn.btn-info-outline.btn-lg.form-control(type='submit', data-toggle='tooltip', data-placement='top', title='Please fill out all fields when updating.') Update
+        form(method='POST' action='/delete')
+          input#deleteUser.form-control(type="hidden", value='#{userId}', name="deleteUser")
+          div.form-group
+          button#delete-btn.btn.btn-info-outline.btn-lg(type='submit') Delete
