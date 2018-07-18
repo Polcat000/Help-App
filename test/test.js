@@ -1,7 +1,3 @@
-var expect    = require("chai").expect;
+var expect = require("chai").expect;
 
-describe('graduatedCodeLouisville', function () {
-    it('graduatedCodeLouisville', function () {
-      expect('I graduated Code Louisville').to.eql('I graduated Code Louisville!');
-    });
-  });
+expect(6).to.eql(6);

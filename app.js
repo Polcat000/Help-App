@@ -9,10 +9,6 @@ var methodOverride = require('method-override');
 var routes = require('./routes/index');
 var app = express();
 
-new function graduatedCodeLouisville(){
-  console.log('I graduated Code Louisville!')
-};
-
 
 //mongodb connection
 var db = mongoose.connection;
