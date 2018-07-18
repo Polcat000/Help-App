@@ -9,8 +9,11 @@ To run locally:
 
 Check that you have node and npm installed.
 ```node -v
+
 ```
+
 ```npm -v
+
 ```
   
 
