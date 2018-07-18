@@ -8,18 +8,22 @@ Help is an app that displays emergency information for users that are registered
 To run locally:
 
 Check that you have node and npm installed.
-```node -v
+```
+    node -v
 
 ```
 
-```npm -v
+```
+    npm -v
 
 ```
   
 
-```git clone 
+```
+   git clone 
    cd root/Help-App
    npm install
    npm start
+   
 ```
 The app uses Node.js, Express, and MongoDB.
