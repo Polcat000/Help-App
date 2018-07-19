@@ -18,7 +18,7 @@ First, check that you have node and npm installed.
     $ npm -v
 ```
   
-Then, clone the repo and cd into new directory's location on your machine.
+Then, clone the repo and cd into the new directory's location on your machine.
 ```
    $ git clone 
    $ cd root/Help-App
