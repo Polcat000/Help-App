@@ -1,7 +1,7 @@
 var User = require('../models/user.model');
 
 
-
+//Creates a user in the database
 exports.user_create = function (req, res, next){
     if (req.body.email &&
         req.body.name &&
@@ -44,7 +44,7 @@ exports.user_create = function (req, res, next){
           return next(err);
         }
 };
-
+//Logs user in to Help!
 exports.user_login = function (req, res, next) {
   if (req.body.email && req.body.password){
     User.authenticate(req.body.email, req.body.password, function(error, user){
@@ -63,7 +63,7 @@ exports.user_login = function (req, res, next) {
     return next(err);
   }
 };
-
+//Logs user out of Help!
 exports.user_logout = function(req, res, next){
   if(req.session){
     //delete session object
@@ -76,7 +76,7 @@ exports.user_logout = function(req, res, next){
     })
   }
 };
-
+//Displays profile to logged in user
 exports.user_profile = function(req, res, next) {
   User.findById(req.session.userId)
     .exec(function(error, user){
@@ -88,7 +88,7 @@ exports.user_profile = function(req, res, next) {
       }
   });
 };
-
+//Displays profile to anyone visiting the site regardless of login status
 exports.user_public_view = function(req, res, next) {
   var username = {'name': req.body.name}
     User.findOne(username, function(error, user){
@@ -102,7 +102,7 @@ exports.user_public_view = function(req, res, next) {
     }); 
 };
 
-
+//Updates user info in database
 exports.user_update = function(req, res, next) {
 
   User.findByIdAndUpdate(req.session.userId, req.body, { new: true },
@@ -113,7 +113,7 @@ exports.user_update = function(req, res, next) {
     });
 
 };
-
+//Deletes user from database
 exports.user_delete = function(req, res, next) {
   User.findByIdAndRemove(req.session.userId, function (err, user) {
       //delete session object

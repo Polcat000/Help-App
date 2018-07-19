@@ -60,7 +60,7 @@ UserSchema.statics.authenticate = function(email, password, callback){
         });
 }
 //hash password before saving to the database
-
+//Mongoose Schema for User
 UserSchema.pre('save', function(next){
     var user = this;
     bcrypt.hash(user.password, 10, function(err, hash){
