@@ -3,7 +3,10 @@
 
 Help! is an app that displays emergency information for users that are registered in our database.
 
+This app has been deployed to Heroku. :point_right:    [Help!](https://code-louisville-help-app.herokuapp.com/ "Giddyup!")
+
 # Setting up
+
 
 To run locally:
 
