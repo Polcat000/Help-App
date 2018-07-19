@@ -20,6 +20,7 @@ First, check that you have node and npm installed.
 ```
     $ npm -v
 ```
+
   
 Then, clone the repo and cd into the new directory's location on your machine.
 ```
@@ -27,13 +28,34 @@ Then, clone the repo and cd into the new directory's location on your machine.
    $ cd root/Help-App
 ```   
 
+
 Finally, install dependencies, and start the server.
 ```   
    $ npm install
    $ npm start
 ```
 
-Navigate to localhost:3000, and the app should be running in the browser.
+
+:warning:
+In order for this app to run properly, it needs to access a mongoDB database using mlab.
+It is set up to use environment variables for this, as well as a secret for authorization purposes.
+So, you will need to add a .env file containing the following:
+
+
+```
+    DB_HOST=<ds00000.mlab.com:00000/yourdatabasename>
+    DB_NAME=<yourdatabasename>
+    DB_USERNAME=<yourmlabusername>
+    DB_PASSWORD=<yourmlabpassword>
+    SECRET=<yourmom>
+```
+
+If you're unfamiliar with mlab just visit their docs and you should have all of the above in no time! https://docs.mlab.com/
+
+
+Navigate to localhost:3000, and the app should be running in the browser. :tada:
+
+
 
 If you need any help :wink: or if there are any issues :rage2: please don't hesitate to contact me on here, or submit an issue.
 
