@@ -24,11 +24,14 @@ Then, clone the repo and cd into the new directory's location on your machine.
    $ cd root/Help-App
 ```   
 
-Finally, install dependencies.
+Finally, install dependencies, and start the server.
 ```   
    $ npm install
    $ npm start
 ```
+
+Navigate to localhost:3000, and the app should be running in the browser.
+
 If you need any help :wink: or if there are any issues :rage2: please don't hesitate to contact me on here, or submit an issue.
 
 Thanks!
