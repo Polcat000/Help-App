@@ -50,7 +50,7 @@ So, you will need to add a .env file containing the following:
     SECRET=<yourmom>
 ```
 
-If you're unfamiliar with mlab just visit their docs and you should have all of the above in no time! https://docs.mlab.com/
+If you're unfamiliar with mlab, just visit their docs and you should have all of the above in no time! https://docs.mlab.com/
 
 
 Navigate to localhost:3000, and the app should be running in the browser. :tada:
