@@ -10,7 +10,7 @@ This app has been deployed to Heroku. :point_right:    [Help!](https://code-loui
 
 To run locally:
 
-Help! uses Node.js as well as Express, and stores it's user information in a MongoDB database. 
+Help! uses Node.js as well as Express, and stores its users' information in a MongoDB database. 
 
 First, check that you have node and npm installed.
 ```
