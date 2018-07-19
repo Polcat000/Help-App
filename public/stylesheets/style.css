@@ -102,6 +102,9 @@ a:hover {
 #welcome-btn{
 	margin-top: 2em;
 }
+#delete-btn:hover{
+	background: rgba(255, 0, 0, 0.89);
+}
 
 /* Icon Styles */
 
